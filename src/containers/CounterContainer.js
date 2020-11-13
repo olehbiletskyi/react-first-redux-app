@@ -4,11 +4,11 @@ import { incrementAction, decrementAction } from '../actions/counter';
 import Counter from '../components/Counter/counter';
 
 
-const CounterContainer = ({count, increment, decrement}) => (
+const CounterContainer = ({count, incrementAction, decrementAction}) => (
     <Counter
         count={count}
-        increment={increment}
-        decrement={decrement}
+        increment={incrementAction}
+        decrement={decrementAction}
     />
 );
 
@@ -17,15 +17,16 @@ const mapStateToProps = (state) => ({
     count: state.counter.count
 })
 
-const mapDispatchToProps = () => {
-    return {
-        increment: incrementAction,
-        decrement: decrementAction,
-    }
-};
+// const mapDispatchToProps = () => {
+//     return {
+//         increment: incrementAction,
+//         decrement: decrementAction,
+//     }
+// };
 
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps,
+    // mapDispatchToProps,
+    {incrementAction, decrementAction}
 )(CounterContainer);

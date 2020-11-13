@@ -17,7 +17,7 @@ const counterReducer = (state = initialState, action) => {
                 count: state.count + 1,
             };
         case DECREMENT_COUNT :
-        return{
+            return{
             ...state,
             count: state.count - 1,
         };
