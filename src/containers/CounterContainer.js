@@ -28,9 +28,16 @@ const mapStateToProps = (state) => ({
 //     }
 // };
 
+const mapDispatchToProps = {
+    incrementAction,
+    decrementAction,
+    resetAction,
+    sendAction,
+
+};
 
 export default connect(
     mapStateToProps,
-    // mapDispatchToProps,
-    {incrementAction, decrementAction, resetAction, sendAction}
+    mapDispatchToProps,
+    // {incrementAction, decrementAction, resetAction, sendAction}
 )(CounterContainer);
